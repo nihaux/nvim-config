@@ -30,6 +30,18 @@ Plug 'mbbill/undotree'
 " Initialize plugin system
 call plug#end()
 
+" esc to go back to normal mode in terminal
+:tnoremap <Esc> <C-\><C-n>
+" use `Alt+{h,j,k,l}` to navigate between windows from any mode.
+" <C-V> is used to send to alt key in mac
+:tnoremap <C-V><A-h> <C-\><C-n><C-w>h
+:tnoremap <C-V><A-j> <C-\><C-n><C-w>j
+:tnoremap <C-V><A-k> <C-\><C-n><C-w>k
+:tnoremap <C-V><A-l> <C-\><C-n><C-w>l
+:nnoremap <C-V><A-h> <C-w>h
+:nnoremap <C-V><A-j> <C-w>j
+:nnoremap <C-V><A-k> <C-w>k
+:nnoremap <C-V><A-l> <C-w>l
 
 let g:neomake_list_height = 2
 let g:neomake_open_list = 2
@@ -45,3 +57,9 @@ set foldmethod=syntax
 set foldlevelstart=1
 
 let javaScript_fold=1         " JavaScript
+
+" use 2 space for javascript 
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+
+set splitbelow
+set splitright
